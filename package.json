@@ -11,13 +11,13 @@
     "ui"
   ],
   "dependencies": {
-    "component-emitter": "1.2.0",
+    "component-emitter": "^1.2.0",
     "@pirxpilot/events": "~1",
-    "has-translate3d": "0.0.3",
-    "touchaction-property": "0.0.1",
-    "transform-property": "0.0.1",
-    "transitionend-property": "0.0.2",
-    "computed-style-component": "0.1.0"
+    "has-translate3d": "~0",
+    "touchaction-property": "~0",
+    "transform-property": "~0",
+    "transitionend-property": "~0",
+    "computed-style-component": "~0"
   },
   "browser": {
     "computed-style": "computed-style-component",
