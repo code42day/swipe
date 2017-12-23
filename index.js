@@ -123,20 +123,22 @@ Swipe.prototype.bind = function(){
   this.events = events(this.child, this);
   this.docEvents = events(document, this);
 
-  // standard mouse click events
-  this.events.bind('mousedown', 'ontouchstart');
-  this.events.bind('mousemove', 'ontouchmove');
-  this.docEvents.bind('mouseup', 'ontouchend');
+  if ('PointerEvent' in window) {
+    // MS IE touch events
+    this.events.bind('pointerdown', 'ontouchstart');
+    this.events.bind('pointermove', 'ontouchmove');
+    this.docEvents.bind('pointerup', 'ontouchend')
+  } else {
+    // standard mouse click events
+    this.events.bind('mousedown', 'ontouchstart');
+    this.events.bind('mousemove', 'ontouchmove');
+    this.docEvents.bind('mouseup', 'ontouchend');
 
-  // W3C touch events
-  this.events.bind('touchstart', 'ontouchstart');
-  this.events.bind('touchmove', 'ontouchmove');
-  this.docEvents.bind('touchend', 'ontouchend');
-
-  // MS IE touch events
-  this.events.bind('PointerDown', 'ontouchstart');
-  this.events.bind('PointerMove', 'ontouchmove');
-  this.docEvents.bind('PointerUp', 'ontouchstart');
+    // W3C touch events
+    this.events.bind('touchstart', 'ontouchstart');
+    this.events.bind('touchmove', 'ontouchmove');
+    this.docEvents.bind('touchend', 'ontouchend');
+  }
 };
 
 /**
