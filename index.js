@@ -127,7 +127,7 @@ Swipe.prototype.bind = function(){
     // MS IE touch events
     this.events.bind('pointerdown', 'ontouchstart');
     this.events.bind('pointermove', 'ontouchmove');
-    this.docEvents.bind('pointerup', 'ontouchend')
+    this.docEvents.bind('pointerup', 'ontouchend');
   } else {
     // standard mouse click events
     this.events.bind('mousedown', 'ontouchstart');
