@@ -9,7 +9,7 @@ var touchAction = require('touchaction-property');
 var has3d = require('has-translate3d');
 var style = require('computed-style');
 var Emitter = require('emitter');
-var events = require('component-events');
+var events = require('@pirxpilot/events');
 var min = Math.min;
 var max = Math.max;
 
@@ -129,9 +129,9 @@ Swipe.prototype.bind = function(){
   this.docEvents.bind('mouseup', 'ontouchend');
 
   // W3C touch events
-  this.events.bind('touchstart');
-  this.events.bind('touchmove');
-  this.docEvents.bind('touchend');
+  this.events.bind('touchstart', 'ontouchstart');
+  this.events.bind('touchmove', 'ontouchmove');
+  this.docEvents.bind('touchend', 'ontouchend');
 
   // MS IE touch events
   this.events.bind('PointerDown', 'ontouchstart');
