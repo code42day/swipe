@@ -1,4 +1,14 @@
 
+2.0.0 / 2017-12-23
+==================
+
+ * use pointer events only if available
+ * replace component-events with @pirxpilot/events
+ * remove component-event
+ * rename to @pirxpilot/swipe
+ * fix lint issues
+ * replace component build with browserify build
+
 1.7.7 / 2015-04-15
 ==================
 
