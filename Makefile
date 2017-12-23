@@ -13,7 +13,11 @@ build:
 	mkdir -p $@
 
 build/build.js: node_modules index.js | build
-	browserify --require ./index.js:$(PROJECT) --outfile $@
+	browserify \
+	  --debug \
+		--require ./index.js:$(PROJECT) \
+		--require assert:assert \
+		--outfile $@
 
 .DELETE_ON_ERROR: build/build.js
 

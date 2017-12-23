@@ -15,6 +15,9 @@
     "@pirxpilot/events": "~1",
     "has-translate3d": "~0"
   },
+  "devDependencies": {
+    "assert": "~1"
+  },
   "browser": {
     "emitter": "component-emitter"
   },
