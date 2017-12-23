@@ -1,5 +1,5 @@
 {
-  "name": "swipe",
+  "name": "@pirxpilot/swipe",
   "description": "Swipe component with touch support",
   "version": "1.7.7",
   "keywords": [
@@ -26,10 +26,7 @@
     "event": "component-event"
   },
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/component/swipe.git"
-  },
+  "repository": "pirxpilot/swipe",
   "files": [
     "index.js"
   ]

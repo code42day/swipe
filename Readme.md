@@ -5,7 +5,7 @@
 
 ## Installation
 
-    $ component install component/swipe
+    $ npm -i @pirxpilot/swipe
 
 ## Events
 
