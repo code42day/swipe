@@ -1,0 +1,12 @@
+{
+  "undef": true,
+  "unused": true,
+  "laxbreak": true,
+  "browser": true,
+  "eqnull": true,
+  "globals": {
+    "exports": false,
+    "require": false,
+    "module": false
+  }
+}

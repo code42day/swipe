@@ -211,8 +211,8 @@ Swipe.prototype.ontouchmove = function(e){
   e.preventDefault();
 
   var dir = this.dx < 0 ? 1 : 0;
-  if (this.isFirst() && 0 == dir) this.dx /= 2;
-  if (this.isLast() && 1 == dir) this.dx /= 2;
+  if (this.isFirst() && 0 === dir) this.dx /= 2;
+  if (this.isLast() && 1 === dir) this.dx /= 2;
   this.translate((i * w) + -this.dx);
 };
 
@@ -225,11 +225,9 @@ Swipe.prototype.ontouchmove = function(e){
 Swipe.prototype.ontouchend = function(e){
   e.stopPropagation();
   if (!this.down) return;
-  var touch = this.getTouch(e);
 
   // setup
   var dx = this.dx;
-  var x = touch.pageX;
   var w = this.childWidth;
 
   // < 200ms swipe
@@ -251,10 +249,10 @@ Swipe.prototype.ontouchend = function(e){
   if (this.isLast() && 1 == dir) return this.next();
 
   // N -> N + 1
-  if (1 == dir && half) return this.next();
+  if (1 === dir && half) return this.next();
 
   // N -> N - 1
-  if (0 == dir && half) return this.prev();
+  if (0 === dir && half) return this.prev();
 
   // N -> N
   this.show(this.currentVisible);
@@ -336,7 +334,7 @@ Swipe.prototype.cycle = function(){
  */
 
 Swipe.prototype.isFirst = function(){
-  return this.currentVisible == 0;
+  return this.currentVisible === 0;
 };
 
 /**
