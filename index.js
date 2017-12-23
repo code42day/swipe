@@ -3,9 +3,6 @@
  * Module dependencies.
  */
 
-var transitionend = require('transitionend-property');
-var transform = require('transform-property');
-var touchAction = require('touchaction-property');
 var has3d = require('has-translate3d');
 var Emitter = require('emitter');
 var events = require('@pirxpilot/events');
@@ -397,9 +394,9 @@ Swipe.prototype.show = function(i, ms, options){
   if (!options.silent) {
     this.emit('showing', this.current, this.currentEl);
     if (!ms) return this;
-    this.child.addEventListener(transitionend, function shown() {
+    this.child.addEventListener('transitionend', function shown() {
       if (self.current == i) self.emit('show', self.current, self.currentEl);
-      self.child.removeEventListener(transitionend, shown);
+      self.child.removeEventListener('transitionend', shown);
     });
   }
   return this;
@@ -441,10 +438,6 @@ Swipe.prototype.children = function(){
 
 Swipe.prototype.transitionDuration = function(ms){
   var s = this.child.style;
-  s.webkitTransition = ms + 'ms -webkit-transform';
-  s.MozTransition = ms + 'ms -moz-transform';
-  s.msTransition = ms + 'ms -ms-transform';
-  s.OTransition = ms + 'ms -o-transform';
   s.transition = ms + 'ms transform';
 };
 
@@ -460,9 +453,9 @@ Swipe.prototype.translate = function(x){
   var s = this.child.style;
   x = -x;
   if (has3d) {
-    s[transform] = 'translate3d(' + x + 'px, 0, 0)';
+    s.transform = 'translate3d(' + x + 'px, 0, 0)';
   } else {
-    s[transform] = 'translateX(' + x + 'px)';
+    s.transform = 'translateX(' + x + 'px)';
   }
 };
 
@@ -474,9 +467,7 @@ Swipe.prototype.translate = function(x){
 
 Swipe.prototype.touchAction = function(value){
   var s = this.child.style;
-  if (touchAction) {
-    s[touchAction] = value;
-  }
+  s.touchAction = value;
 };
 
 /**

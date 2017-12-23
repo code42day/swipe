@@ -13,10 +13,7 @@
   "dependencies": {
     "component-emitter": "^1.2.0",
     "@pirxpilot/events": "~1",
-    "has-translate3d": "~0",
-    "touchaction-property": "~0",
-    "transform-property": "~0",
-    "transitionend-property": "~0"
+    "has-translate3d": "~0"
   },
   "browser": {
     "emitter": "component-emitter"
