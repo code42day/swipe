@@ -26,13 +26,11 @@
     "event": "component-event"
   },
   "license": "MIT",
-  "component": {
-    "scripts": {
-      "swipe/index.js": "index.js"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/component/swipe.git"
-  }
+  },
+  "files": [
+    "index.js"
+  ]
 }
