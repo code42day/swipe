@@ -9,7 +9,6 @@ var touchAction = require('touchaction-property');
 var has3d = require('has-translate3d');
 var style = require('computed-style');
 var Emitter = require('emitter');
-var event = require('event');
 var events = require('component-events');
 var min = Math.min;
 var max = Math.max;
@@ -397,9 +396,9 @@ Swipe.prototype.show = function(i, ms, options){
   if (!options.silent) {
     this.emit('showing', this.current, this.currentEl);
     if (!ms) return this;
-    event.bind(this.child, transitionend, function shown() {
+    this.child.addEventListener(transitionend, function shown() {
       if (self.current == i) self.emit('show', self.current, self.currentEl);
-      event.unbind(self.child, transitionend, shown);
+      self.child.removeEventListener(transitionend, shown);
     });
   }
   return this;
