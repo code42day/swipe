@@ -7,7 +7,6 @@ var transitionend = require('transitionend-property');
 var transform = require('transform-property');
 var touchAction = require('touchaction-property');
 var has3d = require('has-translate3d');
-var style = require('computed-style');
 var Emitter = require('emitter');
 var events = require('@pirxpilot/events');
 var min = Math.min;
@@ -522,5 +521,5 @@ function indexOf(els, el) {
  */
 
 function visible(el) {
-  return style(el).display != 'none';
+  return getComputedStyle(el).display != 'none';
 }

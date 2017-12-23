@@ -16,11 +16,9 @@
     "has-translate3d": "~0",
     "touchaction-property": "~0",
     "transform-property": "~0",
-    "transitionend-property": "~0",
-    "computed-style-component": "~0"
+    "transitionend-property": "~0"
   },
   "browser": {
-    "computed-style": "computed-style-component",
     "emitter": "component-emitter"
   },
   "license": "MIT",
