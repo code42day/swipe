@@ -1,4 +1,11 @@
 
+2.0.1 / 2017-12-23
+==================
+
+ * fix tests
+ * stop supporting prefixed versions of CSS properties
+ * use window.getComputedStyle
+
 2.0.0 / 2017-12-23
 ==================
 
