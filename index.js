@@ -123,7 +123,8 @@ Swipe.prototype.bind = function(){
     // MS IE touch events
     this.events.bind('pointerdown', 'ontouchstart');
     this.events.bind('pointermove', 'ontouchmove');
-    this.docEvents.bind('pointerup', 'ontouchend');
+    this.events.bind('pointerup', 'ontouchend');
+    this.events.bind('pointercancel', 'ontouchend');
   } else {
     // standard mouse click events
     this.events.bind('mousedown', 'ontouchstart');
@@ -159,6 +160,9 @@ Swipe.prototype.ontouchstart = function(e){
   this.dx = 0;
   this.updown = null;
 
+  if ('PointerEvent' in window) {
+    e.target.setPointerCapture(e.pointerId);
+  }
   var touch = this.getTouch(e);
   this.down = {
     x: touch.pageX,
@@ -223,6 +227,9 @@ Swipe.prototype.ontouchend = function(e){
   e.stopPropagation();
   if (!this.down) return;
 
+  if ('PointerEvent' in window) {
+    e.target.releasePointerCapture(e.pointerId);
+  }
   // setup
   var dx = this.dx;
   var w = this.childWidth;
